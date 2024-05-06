@@ -1,0 +1,17 @@
+class Solution:
+    def searchRange(self, l: List[int], t: int) -> List[int]:
+        k=[]
+        for i in l:
+            if i==t:
+                k.append(l.index(i))
+                break
+        for i in range(len(l)-1,-1,-1):
+            if l[i]==t:
+                k.append(i)
+                break
+        if k==[]:
+            k.append(-1)
+            k.append(-1)
+            return k
+        else:
+            return k
