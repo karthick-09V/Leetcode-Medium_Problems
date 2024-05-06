@@ -1,0 +1,21 @@
+int countPrimes(int n) {
+    int a[n+1],c=0;
+    n--;
+    for(int i=0;i<n;i++){
+        a[i]=i+1;
+    }
+    int limit=sqrt(n);
+    for(int i=1;i<=limit;i++){
+        if(a[i]!=0){
+            for(int j=pow(a[i],2);j<=n;j=j+a[i]){
+                a[j-1]=0;
+            }
+        }
+    }
+    for(int i=1;i<n;i++){
+        if(a[i]!=0){
+            c++;
+        }
+    }
+    return c;
+}
