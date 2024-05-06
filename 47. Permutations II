@@ -1,0 +1,8 @@
+class Solution:
+    def permuteUnique(self, l: List[int]) -> List[List[int]]:
+        k=permutations(l,len(l))
+        t=[]
+        for i in k:
+            if i not in t:
+                t.append(i)
+        return t
