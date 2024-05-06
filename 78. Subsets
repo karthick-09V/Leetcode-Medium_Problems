@@ -1,0 +1,10 @@
+class Solution:
+    def subsets(self, nums: List[int]) -> List[List[int]]:
+        l=[[]]
+        for i in range(len(nums)):
+            k=combinations(nums,i+1)
+            for j in k:
+                t=list(j)
+                if len(t)==len(set(t)):
+                    l.append(t)
+        return l
