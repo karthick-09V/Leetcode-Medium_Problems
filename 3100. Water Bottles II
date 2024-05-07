@@ -1,0 +1,13 @@
+int maxBottlesDrunk(int k, int x) {
+    int s=0,t=k;
+    while(1){
+        k-=x;
+        k++;
+        x++;
+        if(k<=0){
+            break;
+        }
+        s++;
+    }
+    return t+s;
+}
