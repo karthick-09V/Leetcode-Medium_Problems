@@ -1,0 +1,11 @@
+class Solution:
+    def findLeastNumOfUniqueInts(self, arr: List[int], k: int) -> int:
+        d=Counter(arr)
+        m=sorted(d.items(),key = lambda d:d[1])
+        l=dict(m)
+        print(l)
+        for i,j in m:
+            if k>=j:
+                del l[i]
+                k-=j
+        return len(l)
